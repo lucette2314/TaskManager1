@@ -4,13 +4,14 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
 import { Itask } from '../interface/itask';
 import { TasksService } from '../services/tasks.service';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, CommonModule],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, CommonModule, RouterLink],
 })
 export class Tab1Page {
   //property
@@ -18,6 +19,11 @@ export class Tab1Page {
 
   constructor(private tasksService: TasksService) {
     this.getTask();
+  }
+
+  ngOnInit(){
+    console.log("entrar")
+     this.getTask(); 
   }
 
   deleteTask(taskId: number) {

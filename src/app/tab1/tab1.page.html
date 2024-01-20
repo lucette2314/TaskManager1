@@ -30,6 +30,7 @@
         <p>{{ task.progress_level }}</p>
         <hr>
         <button (click)="deleteTask(task.id)">Delete</button>
+        <button [routerLink]="['/tabs/tab2', task.id]">Edit</button>
     </div>
 </div>
   </div>

@@ -1,17 +1,54 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      {{ title }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <form [formGroup]="taskForm">
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input type="text" class="form-control" formControlName="title">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <input type="text" class="form-control" formControlName="description">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Category</label>
+      <input type="text" class="form-control" formControlName="category">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Task Date</label>
+      <input type="date" class="form-control" formControlName="task_date">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Priority Level</label>
+      <select class="form-select" formControlName="priority_level">
+        <option value="" selected>Select Priority Level</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Progress Level</label>
+      <select class="form-select" formControlName="progress_level">
+        <option value="" selected>Select Progress Level</option>
+        <option>STARTED</option>
+        <option>PENDING</option>
+        <option>COMPLETED</option>
+      </select>
+    </div>
+
+    <button (click)="onSubmit()">Submit</button>
+  </form>
 </ion-content>

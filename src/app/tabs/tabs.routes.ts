@@ -17,6 +17,11 @@ export const routes: Routes = [
           import('../tab2/tab2.page').then((m) => m.Tab2Page),
       },
       {
+        path: 'tab2/:task-id',
+        loadComponent: () =>
+          import('../tab2/tab2.page').then((m) => m.Tab2Page),
+      }, 
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full',

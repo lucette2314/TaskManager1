@@ -12,4 +12,7 @@ export class TasksService {
   getTasks(){
     return this.http.get<Itask[]>('http://localhost:3000/tasks');
   }
+  deleteTask(task_id: number){
+    return this.http.delete<any>(`http://localhost:3000/tasks/${task_id}`);
+  }
 }

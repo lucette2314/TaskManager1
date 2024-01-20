@@ -1,17 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Task List - Melanie
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div *ngFor="let task of tasks">
+  <div class="card">
+    <div class="card-header bg-success text-white" [ngClass]="{'bg-secondary' :task.priority_level==='Low',
+                                                            'bg-dark' :task.priority_level==='Medium',
+                                                            'bg-warning' :task.priority_level==='High',
+                                                            'bg-danger' :task.priority_level==='Critical'}">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+        <h4 class="card-title">{{ task.title }}</h4>
+    </div>
+ 
+    <div class="card-body bg-primary text-white">
+        <p>{{ task.description }}</p>
+        <hr>
+        <p>{{ task.category }}</p>
+        <hr>
+        <p>{{ task.task_date }}</p>
+        <hr>
+        <p>{{ task.priority_level }}</p>
+        <hr>
+        <p>{{ task.progress_level }}</p>
+        <hr>
+        <button (click)="deleteTask(task.id)">Delete</button>
+    </div>
+</div>
+  </div>
+
 </ion-content>

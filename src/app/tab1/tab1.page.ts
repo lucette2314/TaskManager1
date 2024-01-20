@@ -21,8 +21,7 @@ export class Tab1Page {
     this.getTask();
   }
 
-  ngOnInit(){
-    console.log("entrar")
+  ionViewDidEnter(){
      this.getTask(); 
   }
 

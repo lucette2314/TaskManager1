@@ -5,13 +5,15 @@ import { Itask } from '../interface/itask';
 import { TasksService } from '../services/tasks.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { IonCard, IonCardHeader, IonButton, IonCardContent, IonCardTitle} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, CommonModule, RouterLink],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, CommonModule, RouterLink, IonCard, IonCardHeader, IonButton, IonCardContent, IonCardTitle,
+            ],
 })
 export class Tab1Page {
   //property

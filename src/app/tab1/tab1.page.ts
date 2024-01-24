@@ -5,7 +5,9 @@ import { Itask } from '../interface/itask';
 import { TasksService } from '../services/tasks.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { IonCard, IonCardHeader, IonButton, IonCardContent, IonCardTitle} from '@ionic/angular/standalone';
+import { IonCard, IonCardHeader, IonButton, IonCardContent, IonCardTitle, IonItem, IonIcon} from '@ionic/angular/standalone';
+import { create } from 'ionicons/icons';
+import { addIcons } from 'ionicons';
 
 @Component({
   selector: 'app-tab1',
@@ -13,13 +15,14 @@ import { IonCard, IonCardHeader, IonButton, IonCardContent, IonCardTitle} from '
   styleUrls: ['tab1.page.scss'],
   standalone: true,
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, CommonModule, RouterLink, IonCard, IonCardHeader, IonButton, IonCardContent, IonCardTitle,
-            ],
+            IonItem, IonIcon],
 })
 export class Tab1Page {
   //property
   tasks!: Itask[];
 
   constructor(private tasksService: TasksService) {
+    addIcons({create})
     this.getTask();
   }
 

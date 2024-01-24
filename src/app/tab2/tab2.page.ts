@@ -7,13 +7,15 @@ import { Itask } from '../interface/itask';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { IonItem, IonLabel, IonDatetime, IonSelect, IonSelectOption, IonList, IonButton, IonAlert, IonDatetimeButton, IonRow, IonCol} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, FormsModule, ReactiveFormsModule, CommonModule, RouterLinkActive, RouterLink, RouterOutlet],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, FormsModule, ReactiveFormsModule, CommonModule, RouterLinkActive, RouterLink, RouterOutlet,
+            IonItem, IonLabel, IonDatetime, IonSelect, IonSelectOption, IonList, IonButton, IonAlert, IonDatetimeButton, IonRow, IonCol],
 })
 export class Tab2Page {
   
@@ -55,6 +57,7 @@ export class Tab2Page {
       })
     }
   }
+  alertButtons = ['Action']
   onSubmit() {
     const formData = this.taskForm.value;
     if (this.isEditMode) {

@@ -9,35 +9,36 @@
 <ion-content [fullscreen]="true">
 
   <div *ngFor="let task of tasks">
-    <div class="card">
-      <div  [ngClass]="{'bg-secondary' :task.priority_level==='Low',
-                                                            'bg-dark' :task.priority_level==='Medium',
-                                                            'bg-warning' :task.priority_level==='High',
-                                                            'bg-danger' :task.priority_level==='Critical'}">
 
+    <ion-button class="colors" [ngClass]="{
+      'bg-color-secondary': task.priority_level === 'Low',
+      'bg-color-dark': task.priority_level === 'Medium',
+      'bg-color-warning': task.priority_level === 'High',
+      'bg-color-danger': task.priority_level === 'Critical'}">
+      {{ task.title }}
+    </ion-button>
 
-        <h4 class="ion-padding">{{ task.title }}</h4>
+    <ion-card>
+      <ion-card-content>
+        <h2>{{ task.description }}</h2>
+        <hr>
+        <h2>{{ task.category }}</h2>
+        <hr>
+        <h2>{{ task.task_date | date: 'medium' }}</h2>
+        <hr>
+        <h2>{{ task.priority_level }}</h2>
+        <hr>
+        <h2>{{ task.progress_level }}</h2>
+        <hr>
+      </ion-card-content>
+      <ion-button fill="clear" (click)="deleteTask(task.id)">Delete</ion-button>
 
-      </div>
+      <ion-button fill="outline" [routerLink]="['/tabs/tab2', task.id]">
+        Edit
+        <ion-icon slot="end" name="create"></ion-icon>
+      </ion-button>
+    </ion-card>
 
-      <ion-card>
-        <ion-card-content>
-          <h2>{{ task.description }}</h2>
-          <hr>
-          <h2>{{ task.category }}</h2>
-          <hr>
-          <h2>{{ task.task_date }}</h2>
-          <hr>
-          <h2>{{ task.priority_level }}</h2>
-          <hr>
-          <h2>{{ task.progress_level }}</h2>
-          <hr>
-        </ion-card-content>
-        <ion-button fill="clear" (click)="deleteTask(task.id)">Delete</ion-button>
-        <ion-button fill="clear" [routerLink]="['/tabs/tab2', task.id]">Edit</ion-button>
-      </ion-card>
-
-    </div>
   </div>
 
 </ion-content>

@@ -6,7 +6,7 @@ import { TasksService } from '../services/tasks.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { IonCard, IonCardHeader, IonButton, IonCardContent, IonCardTitle, IonItem, IonIcon} from '@ionic/angular/standalone';
-import { create } from 'ionicons/icons';
+import { create, trashOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 
 @Component({
@@ -22,7 +22,7 @@ export class Tab1Page {
   tasks!: Itask[];
 
   constructor(private tasksService: TasksService) {
-    addIcons({create})
+    addIcons({create,trashOutline})
     this.getTask();
   }
 

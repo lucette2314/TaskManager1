@@ -1,7 +1,24 @@
-.colors {
-    --bg-color-secondary: red;
-    --bg-color-dark: #your-dark-color;
-    --bg-color-warning: #your-warning-color;
-    --bg-color-danger: red;
+  ion-card{
+    background: rgb(209, 205, 205);
   }
-  
+
+  .delete{
+    background: rgb(179, 179, 245);
+    color: blue;
+  }
+
+  .edit{
+    background: rgb(179, 179, 245);
+    color: blue;
+  }
+
+  h1{
+    font-size: larger;
+    font-weight: bold;
+    font-style:normal;
+  }
+
+  ion-card{
+    font-family: 'Courier New', Courier, monospace;
+    color:black;
+  }

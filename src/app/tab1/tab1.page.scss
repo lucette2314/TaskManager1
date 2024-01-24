@@ -16,9 +16,48 @@
     font-size: larger;
     font-weight: bold;
     font-style:normal;
+    color:rgb(55, 100, 221);
+    text-align: center;
   }
 
   ion-card{
     font-family: 'Courier New', Courier, monospace;
     color:black;
   }
+
+  .title{
+    font-weight: bold;
+    font-size: larger;
+  }
+
+.bg-low {
+  font-weight: bold;
+  color:black;
+  font-style:normal;
+  background-color: yellow;
+}
+
+.bg-medium {
+  font-weight: bold;
+  color:black;
+  font-style:normal;
+  background-color: orange;
+}
+
+.bg-high {
+  font-weight: bold;
+  color:black;
+  font-style:normal;
+  background-color: rgb(214, 10, 10);
+}
+
+.bg-critical {
+  font-weight: bold;
+  color:black;
+  font-style:normal;
+  background-color: purple;
+}
+
+.colors{
+  position: right;
+}    

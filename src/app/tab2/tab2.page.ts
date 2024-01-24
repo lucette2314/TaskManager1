@@ -7,7 +7,7 @@ import { Itask } from '../interface/itask';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { IonItem, IonLabel, IonDatetime, IonSelect, IonSelectOption, IonList, IonButton, IonAlert, IonDatetimeButton, IonRow, IonCol} from '@ionic/angular/standalone';
+import { IonItem, IonLabel, IonDatetime, IonSelect, IonSelectOption, IonList, IonButton, IonAlert, IonDatetimeButton, IonRow, IonCol } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-tab2',
@@ -57,7 +57,7 @@ export class Tab2Page {
       })
     }
   }
-  alertButtons = ['Action']
+ 
   onSubmit() {
     const formData = this.taskForm.value;
     if (this.isEditMode) {
@@ -65,9 +65,10 @@ export class Tab2Page {
       this.taskService.updateTask(this.editTaskId, formData).subscribe((result) => {
         console.log(result);
         alert('Task was updated successfully');
-        this.router.navigate(["/tabs/tab1"]);
+        this.router.navigate(["/tabs/tab1"]); 
       });
     }
+    
     else {
       //Create Task
       this.taskService.createTask(formData).subscribe((result) => {

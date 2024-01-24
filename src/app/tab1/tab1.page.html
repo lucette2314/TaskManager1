@@ -10,34 +10,36 @@
 
   <div *ngFor="let task of tasks">
 
-    <ion-button class="colors" [ngClass]="{
-      'bg-color-secondary': task.priority_level === 'Low',
-      'bg-color-dark': task.priority_level === 'Medium',
-      'bg-color-warning': task.priority_level === 'High',
-      'bg-color-danger': task.priority_level === 'Critical'}">
+    <ion-button slot="end" class="colors" fill="outline" [ngClass]="{
+      'bg-low': task.priority_level === 'Low',
+      'bg-medium': task.priority_level === 'Medium',
+      'bg-high': task.priority_level === 'High',
+      'bg-critical': task.priority_level === 'Critical'
+    }">
       {{ task.title }}
     </ion-button>
+
 
     <ion-card>
       <ion-card-content>
 
-        <ion-icon name="information-circle"></ion-icon>
+        <ion-icon></ion-icon>
         <h2>{{ task.description }}</h2>
     
     
-        <ion-icon name="apps"></ion-icon>
+        <ion-icon></ion-icon>
         <h2>{{ task.category }}</h2>
        
     
-        <ion-icon name="calendar"></ion-icon>
-        <h2>{{ task.task_date | date: 'medium' }}</h2>
+        <ion-icon></ion-icon>
+        <h2>{{ task.task_date | date }}</h2>
       
     
-        <ion-icon name="alert"></ion-icon>
+        <ion-icon></ion-icon>
         <h2>{{ task.priority_level }}</h2>
     
     
-        <ion-icon name="bar-chart"></ion-icon>
+        <ion-icon></ion-icon>
         <h2>{{ task.progress_level }}</h2>
       
       </ion-card-content>

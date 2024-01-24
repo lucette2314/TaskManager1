@@ -8,6 +8,7 @@ import { RouterLink } from '@angular/router';
 import { IonCard, IonCardHeader, IonButton, IonCardContent, IonCardTitle, IonItem, IonIcon} from '@ionic/angular/standalone';
 import { create, trashOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-tab1',
@@ -22,7 +23,7 @@ export class Tab1Page {
   tasks!: Itask[];
 
   constructor(private tasksService: TasksService) {
-    addIcons({create,trashOutline})
+    addIcons({create, trashOutline})
     this.getTask();
   }
 

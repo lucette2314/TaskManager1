@@ -8,35 +8,38 @@
 
 <ion-content [fullscreen]="true">
   <form [formGroup]="taskForm">
- 
-
 
     <ion-item>
       <ion-label position="stacked" class="form-label" style="font-size: 20px;">Title</ion-label>
       <hr>
       <input type="text" position="center" class="form-control" formControlName="title">
+      <hr>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked" class="form-label" style="font-size: 20px;">Description</ion-label>
       <hr>
       <input type="text" position="center" class="form-control" formControlName="description">
+      <hr>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked" class="form-label"style="font-size: 20px;">Category</ion-label>
+      <ion-label position="stacked" class="form-label" style="font-size: 20px;">Category</ion-label>
       <hr>
       <input type="text" position="center" class="form-control" formControlName="category">
+      <hr>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked" class="form-label" style="font-size: 20px;">Task Date</ion-label>
+      <hr>
       <ion-datetime class="form-control" formControlName="task_date" style="text-align: center;"></ion-datetime>
     </ion-item>
     
     <ion-list>
       <ion-item>
         <ion-label position="stacked" class="form-label" style="font-size: 20px;">Priority Level</ion-label>
+        <hr>
         <ion-select class="form-select" formControlName="priority_level" placeholder="Select Priority">
           <ion-select-option value="low">Low</ion-select-option>
           <ion-select-option value="medium">Medium</ion-select-option>
@@ -45,17 +48,18 @@
       </ion-item>
     </ion-list>
 
-        <ion-list>
+    <ion-list>
       <ion-item>
         <ion-label position="stacked" class="form-label" style="font-size: 20px;">Progress Level</ion-label>
+        <hr>
         <ion-select class="form-select" formControlName="progress_level" placeholder="Select Progress">
-          <ion-select-option value="low">STARTED</ion-select-option>
-          <ion-select-option value="medium">PENDING</ion-select-option>
-          <ion-select-option value="high">COMPLETED</ion-select-option>
+          <ion-select-option value="STARTED">STARTED</ion-select-option>
+          <ion-select-option value="PENDING">PENDING</ion-select-option>
+          <ion-select-option value="COMPLETED">COMPLETED</ion-select-option>
         </ion-select>
       </ion-item>
     </ion-list>
-
-    <ion-button (click)="onSubmit()">Submit</ion-button>
+    <hr>
+    <ion-button fill="outline" class="submit" (click)="onSubmit()">Submit</ion-button>
   </form>
 </ion-content>
